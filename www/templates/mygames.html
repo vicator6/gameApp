@@ -1,0 +1,26 @@
+<ion-view view-title="My Games">
+
+  <ion-content class="padding">
+    <div class="padding">
+      <a href="#/addgame" class="button button-block button-balanced">Ajouter un jeu</a>
+    </div>
+    <ion-list>
+      <ion-item   class="item item-thumbnail-left item-toggle item-remove-animate"   ng-repeat="game in games">
+        <img ng-src="{{ game.img }}">
+        <h2>{{ game.title }}</h2>
+        <p>Sortie : {{ game.year }}</p>
+        <p>{{ game.rate }}</p>
+        <p>Platform : ps4</p>
+        <label class="toggle toggle-balanced">
+          <input type="checkbox" >
+          <div class="track">
+            <div class="handle" >
+            </div>
+          </div>
+        </label>
+        <a ng-click="gotogaminfo()" href="#/gameinfo" class="button button-dark button_info icon ion-information-circled"></a>
+        <ion-option-button class="button-assertive " ng-click="removeGame(game.id)">Supprimer<i class="icon ion-trash-a largericon"></i></ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view view-title="Ajouter des Jeux">
+
+  <ion-content class="padding">
+    <div class="item item-input">
+      <input type="text" ng-model="titleSearch" placeholder="Chercher un jeu">
+    </div>
+    <div class="list">
+      <div   class="item item-thumbnail-left item-button-right" ng-repeat="game in games | filter:titleSearch:false" ng-if="titleSearch!==''" >
+        <img ng-src="{{ game.img }}">
+        <h2>{{ game.title }}</h2>
+        <p>Sortie : {{ game.year }}</p>
+        <p>{{ game.rate }}</p>
+        <button ng-click="addGames()" class="button button-balanced"><i class="icon ion-plus"></i></button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--<button ng-click="addGame()" class="button icon ion-plus button-add-game"></button>-->
+
+  </ion-content>
+</ion-view>
